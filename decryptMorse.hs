@@ -24,7 +24,7 @@ main = do
     let msg = "---.. -- ..... .- .... ----- --... .--- --... -.... ...-- ..-. -.... . --. .--- -.- --... -...."
     putStrLn("Original message: ")
     putStrLn(msg)
-	putStrLn("Decoded: ")
+    putStrLn("Decoded: ")
     putStrLn(decodeText msg)
 	
 	
@@ -83,29 +83,29 @@ forRealDecode xs x
     where normalize :: Int -> Char -> Char
           normalize x ch 
               | (isDigit ch) =
-				--map given char to 0th or 26th  (alpha vs digit) of validChars, then apply offest
-				--numbers start at 48, uppercase letters at 65
-				  if ((numIndex ch) + x > 35)
+		--map given char to 0th or 26th  (alpha vs digit) of validChars, then apply offest
+		--numbers start at 48, uppercase letters at 65
+		  if ((numIndex ch) + x > 35)
                   then (validChars!!(mod ((numIndex ch)+x) 36))
                   else (validChars!!((numIndex ch) + x) )
-			  | (isAlpha ch) =
-				  if (alphaIndex + x > 35)
+	      | (isAlpha ch) =
+		  if (alphaIndex + x > 35)
                   then (validChars!!(mod (alphaIndex + x) 36))
                   else (validChars!!(alphaIndex + x))
-			  | otherwise = ch
+	      | otherwise = ch
               where validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
                     numIndex ch
-					--extra special case for numbers.  Why?  Because our time is expendable, that's why.
-					  | (ord ch) == 48 = 35	--0
-						| (ord ch) == 49 = 26	--1
-						| (ord ch) == 50 = 27	--2
-						| (ord ch) == 51 = 28	--3
-						| (ord ch) == 52 = 29	--4
-						| (ord ch) == 53 = 30	--5
-						| (ord ch) == 54 = 31	--6
-						| (ord ch) == 55 = 32	--7
-						| (ord ch) == 56 = 33	--8
-						| otherwise = 34			--9 
+			--extra special case for numbers.  Why?  Because our time is expendable, that's why.
+			| (ord ch) == 48 = 35	--0
+			| (ord ch) == 49 = 26	--1
+			| (ord ch) == 50 = 27	--2
+			| (ord ch) == 51 = 28	--3
+			| (ord ch) == 52 = 29	--4
+			| (ord ch) == 53 = 30	--5
+			| (ord ch) == 54 = 31	--6
+			| (ord ch) == 55 = 32	--7
+			| (ord ch) == 56 = 33	--8
+			| otherwise = 34	--9 
                     alphaIndex = ((mod (ord ch) 65))
 
 -------------------------Part I Code----------------------------
