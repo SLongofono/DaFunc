@@ -10,4 +10,4 @@ Given an "encrypted" message (simple cipher and morse code), this will translate
 
 
 ####lotus_sudoku.hs
-This solves a lotus style sudoku puzzle, given an array representing the starting puzzle.  We originally wrote it to solve all possible puzzles, but it was far too slow for puzzles with only a few entries filled in.
+This solves a lotus style sudoku puzzle, given an array representing the starting puzzle.  We originally wrote it to solve all possible solutions, but it was far too slow for puzzles with only a few entries filled in.
