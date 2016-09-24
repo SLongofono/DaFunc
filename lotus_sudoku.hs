@@ -46,14 +46,11 @@ lotusSolver::[Int]->[Int]
 lotusSolver xs = solver4 xs (findNext xs)
 	
 {-
-This is the main solver algorithm. It was conceived by our instructor, and shared with us
-after we had struggled for an acceptable amount of time with our own naive attempts.  We 
-had already implemented the helper methods for our previous attempts.
-
-The process is as follows:
+This is the main solver algorithm.  The process is as follows:
 
 If index is 49, we have reached the end of a branch, and the board passed in 
-is returned unchanged.
+is returned unchanged.  This indicates that every position has been evaluated
+for the board passed in.
 
 Otherwise, a number is placed into the board at the indicated index.
 if this placement is valid, the resultant board, and the next empty entry in that
